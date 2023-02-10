@@ -1,6 +1,106 @@
+:root {
+    font-size: 1rem;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+
+    --card-width: 30vw;
+    --timeline-gap: 15rem;
+}
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* blog */
+.blog {
+    display: grid;
+    grid-template-columns: 1fr 6fr 2fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas: "sidebar header header" "sidebar main main" "sidebar footer footer";
+    height: 100vh;
+    column-gap: 8vh;
+}
+
+/* sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--bg-primary);
+}
+
+/* header */
+header {
+    grid-area: header;
+}
+
+/* main */
+main {
+    grid-area: main;
+    display: flex;
+    align-items: center;
+}
+
+/* footer */
+footer {
+    grid-area: footer;
+}
+
+/* timeline */
 .timeline {
     display: flex;
-    width: max-content;
-    flex-direction: row;
     overflow-x: scroll;
+    padding: 2rem;
+    gap: var(--timeline-gap);
+}
+
+/* timeline cards */
+.card {
+    flex-shrink: 0;
+    width: var(--card-width);
+    height: fit-content;
+}
+
+.description {
+    text-align: justify;
+    padding: 0 0 1rem 0;
+}
+
+.mentions, .tags {
+    display: flex;
+    justify-content: end;
+}
+
+/* timeline card connections */
+.card-container {
+    display: flex;
+    align-items: center;
+}
+
+.connection-dot-right {
+    width: 2em;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    margin-left: -1rem;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+}
+
+.connection-dot-left {
+    width: 2em;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    margin-right: -1rem;
+    z-index: 1;
+}
+
+.connection-line {
+    width: var(--timeline-gap);
+    height: .3rem;
+    background-color: var(--bg-primary);
+    margin-right: calc(var(--timeline-gap) * -1);
 }

@@ -2,8 +2,8 @@ import Cards from "./Cards";
 
 function Timeline() {
 
-    return(
-        <div className="box timeline">
+    return (
+        <div className="timeline">
             <Cards />
         </div>
     );
