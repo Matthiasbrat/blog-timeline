@@ -1,0 +1,6 @@
+.timeline {
+    display: flex;
+    width: max-content;
+    flex-direction: row;
+    overflow-x: scroll;
+}
