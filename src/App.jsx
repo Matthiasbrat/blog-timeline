@@ -8,7 +8,7 @@ function App() {
             <div className="blog">
                 <header>
                 </header>
-                <Sidebar />
+                {/* <Sidebar /> */}
                 <main>
                     <Timeline />
                 </main>

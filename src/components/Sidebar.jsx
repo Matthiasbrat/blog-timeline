@@ -7,9 +7,15 @@ function Sidebar() {
             </div>
             <div className="sidebar-content">
                 <ul>
-                    <li>graph</li>
-                    <li>articles</li>
-                    <li>add</li>
+                    <li>
+                        <a href="#"><i className="fas fa-plus"></i>timeline</a>
+                    </li>
+                    <li>
+                        <a href="#"><i className="fas fa-plus"></i>articles</a>
+                    </li>
+                    <li>
+                        <a href="#"><i className="fas fa-plus"></i>add</a>
+                    </li>
                 </ul>
             </div>
         </div>

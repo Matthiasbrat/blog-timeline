@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
+import { createRoot } from 'react-dom/client';
 import datas from "../data/cards.json";
 
-function Cards() {
+function Cards({ currentCard }) {
 
     const [cards, setCards] = useState(datas);
+
+    const scrollTo = (event) => {
+        let card = document.getElementById("card" + currentCard);
+        card.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    };
 
     return (
         cards.map(({ title, author, description, image, tags, mentions, created, id }, index) => {
             return (
-                <div className="card-container" key={id} >
+                <div className="card-container" key={id} id={"card" + id}>
+                    {id == currentCard && <button className="timeline-button timeline-button-left" id="timeline-btn-right"><i className='fas fa-angle-left'></i></button>}
                     {index > 0 && <div className="connection-dot-left" key={"cdl" + index}></div>}
                     <div className="card">
                         <div className="card-content">
@@ -37,11 +44,12 @@ function Cards() {
                             </div>
                         </div>
                     </div>
-                    {index < cards.length -1 &&
+                    {index < cards.length - 1 &&
                         <div className="connection-dot-right" key={"cdr" + index}></div>
                     }
                     {index < cards.length - 1 &&
                         <div className="connection-line"></div>}
+                    {id == currentCard && <button className="timeline-button timeline-button-right" id="timeline-btn-righ t"><i className='fas fa-angle-right'></i></button>}
                 </div>
             );
         })
